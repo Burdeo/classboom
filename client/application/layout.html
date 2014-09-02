@@ -1,0 +1,30 @@
+<template name="layout">
+  <nav id="cb-header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <ul class="nav navbar-nav navbar-right">
+        <li id="class-picker" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-danger">ABC-001</span> Biología <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Todas mis clases</a></li>
+            <li class="divider"></li>
+            <li class="active"><a href="#"><span class="pull-right label label-danger">ABC-001</span> Biología </a></li>
+            <li><a href="#"><span class="pull-right label label-primary">DGU-034</span> Lenguaje</a></li>
+            <li><a href="#"><span class="pull-right label label-info">TRC-040</span> Inglés</a></li>
+            <li><a href="#"><span class="pull-right label label-warning">PRT-130</span> Matemáticas</a></li>
+            <li class="divider"></li>
+            <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Ingresar a una clase...</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a class="navbar-brand" href="#"><i class="fa fa-graduation-cap"></i></a>
+      <ul class="nav navbar-nav">
+        <li><a href="#">Inicio</a></li>
+        <li class="active"><a href="#">Actividades</a></li>
+        <li><a href="#">Tareas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+	{{> yield}}
+
+</template>

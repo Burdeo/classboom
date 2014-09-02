@@ -1,0 +1,152 @@
+body {
+  padding-top: 50px;
+  color: #666;
+}
+
+#cb-header {
+  .navbar-brand {
+    .fa {
+      font-size: 28px;
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  #class-picker {
+    font-weight: bold;
+    
+    .label {
+      position: relative;
+      top: -1px;
+      margin-right: 5px;
+      width: 57px;
+      text-align: center;
+      display: inline-block;
+      padding: 0;
+      height: 18px;
+      vertical-align: middle;
+      line-height: 18px;
+
+      &.pull-right {
+        top: 1px;
+        margin-right: -10px;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.calendar {
+  width: 100%;
+
+  .calendar-head {
+    height: 60px;
+    line-height: 60px;
+    padding: 0 10px;
+    font-size: 0;
+
+    .buttons-container {
+      height: 60px;
+      line-height: 70px;
+    }
+
+    .month-picker {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+    }
+
+    .month-switcher {
+      height: 40px;
+      vertical-align: middle;
+      width: 40px;
+      line-height: 38px;
+      text-align: center;
+      background-color: #FAFAFA;
+      border: 1px solid #ddd;
+      font-size: 24px;
+      position: relative;
+      color: #999;
+
+      &:nth-child(2) {
+        left: -1px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        border-color: #bbb;
+        z-index: 2;
+        color: #444;
+      }
+
+      &:active {
+        border-color: #444;
+        background-color: #444;
+        color: #fafafa;
+      }
+    }
+
+    .current-month {
+      font-size: 24px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 15px;
+      font-weight: 300;
+
+      &.active {
+        color: #428BCA;
+      }
+    }
+  }
+
+  .weekdays, .days-container {
+    font-size: 0;
+  }
+
+  .day {
+    display: inline-block;
+    font-size: 14px;
+    width: 14.285%;
+  }
+
+  .weekdays {
+    .day {
+      font-size: 12px;
+      // font-weight: bold;
+      text-transform: lowercase;
+      color: #aaa;
+      padding: 0 10px;
+      height: 35px;
+      line-height: 35px;
+    }
+  }
+
+  .days-container {
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+
+    .day {
+      color: #bbb;
+      padding: 10px 15px;
+      height: 130px;
+      vertical-align: top;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+
+      &:not(.filler):hover {
+        cursor: pointer;
+        box-shadow: -1px -1px #aaa, 0px -1px #aaa, -1px 0px #aaa;
+        background-color: #FDFDFD;
+        border-color: #aaa;
+        color: #777;
+        position: relative;
+        z-index: 1;
+      }
+
+      &.filler {
+        color: #bbb;
+        background-color: #FAFAFA;
+      }
+    }
+  }
+}

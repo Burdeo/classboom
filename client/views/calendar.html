@@ -1,0 +1,40 @@
+<template name="calendar">
+  <div class="calendar">
+    <div class="calendar-head">
+      <div class="container">
+        <div class="pull-right buttons-container">
+          <button class="btn btn-primary"><i class="fa fa-plus"></i> Añadir actividad</button>
+        </div>
+        <div class="month-picker">
+          <i id="prev-month" class="month-switcher fa fa-angle-left"></i>
+          <i id="next-month" class="month-switcher fa fa-angle-right"></i>
+        </div>
+        {{#with currentMonth}}
+          <div class="current-month {{#if currentMonth.isCurrentMonth}}active{{/if}}">{{currentMonth.month}}</div>
+        {{/with}}
+      </div>
+    </div>
+    <div class="weekdays">
+      <div class="day">Lunes</div>
+      <div class="day">Martes</div>
+      <div class="day">Miércoles</div>
+      <div class="day">Jueves</div>
+      <div class="day">Viernes</div>
+      <div class="day">Sábado</div>
+      <div class="day">Domingo</div>
+    </div>
+    <div class="days-container">
+      {{#with month}}
+        {{#each pastDays}}
+          <div class="day filler"></div>
+        {{/each}}
+        {{#each days}}
+          <div class="day">{{day}}</div>
+        {{/each}}
+        {{#each nextDays}}
+          <div class="day filler">{{day}}</div>
+        {{/each}}
+      {{/with}}
+    </div>
+  </div>
+</template>
