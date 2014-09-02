@@ -14,6 +14,7 @@ body {
 
   #class-picker {
     font-weight: bold;
+    background-color: #E7E7E7;
     
     .label {
       position: relative;
@@ -145,7 +146,84 @@ body {
 
       &.filler {
         color: #bbb;
-        background-color: #FAFAFA;
+        background-color: #F0F0F0;
+      }
+    }
+  }
+}
+
+#classSwitcher {
+  .modal-dialog {
+    max-width: 350px;
+
+    .modal-content {
+      border-radius: 0;
+    }
+  }
+
+  .modal-header {
+    .modal-title {
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  .modal-body {
+    padding: 0;
+  }
+
+  .classes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    // padding-bottom: 5px;
+
+    li {
+      display: block;
+      padding: 20px 25px;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+
+      &.overview {
+        color: #999;
+        font-weight: 300;
+      }
+
+      &:hover {
+        background-color: #eee;
+      }
+      .label {
+        display: inline-block;
+        width: 66px;
+        text-align: center;
+        font-size: 12px;
+        padding: 5px 0 4px;
+        vertical-align: middle;
+        margin-top: 3px;
+        float: right;
+      }
+
+      .title {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 18px;
+      }
+
+      &.active {
+        background-color: #428BCA;
+        color: white;
+
+        .label {
+          border: 3px solid white;
+          box-sizing: content-box;
+          margin-top: 0;
+          margin-right: -3px;
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
       }
     }
   }

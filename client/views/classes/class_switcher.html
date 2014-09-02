@@ -1,0 +1,35 @@
+<template name="classSwitcher">
+  <div class="modal fade" id="classSwitcher" tabindex="-1" role="dialog" aria-labelledby="classSwitcherLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title">Cambiar de clase</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="classes-list">
+            <li class="overview">
+              <div class="title">Todas mis clases</div>
+            </li>
+            <li>
+              <span class="label label-warning">CFI-201</span>
+              <div class="title">Lenguaje</div>
+            </li>
+            <li class="active">
+              <span class="label label-danger">BGL-032</span>
+              <div class="title">Biología</div>
+            </li>
+            <li>
+              <span class="label label-info">MTT-140</span>
+              <div class="title">Matemáticas</div>
+            </li>
+            <li>
+              <span class="label label-success">TXL-056</span>
+              <div class="title">Física</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
