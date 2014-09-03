@@ -13,4 +13,10 @@ mrt:moment
 natestrauser:font-awesome
 accounts-base
 accounts-password
+collectionfs
+cfs-gridfs
+cfs-filesystem
+cfs-ui
+ui-dropped-event
+matb33:collection-hooks
 

@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "collectionfs": {},
+    "cfs-gridfs": {},
+    "cfs-filesystem": {},
+    "cfs-ui": {},
+    "ui-dropped-event": {}
+  }
+}
