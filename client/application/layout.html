@@ -1,7 +1,9 @@
 <template name="layout">
-  {{> header}}
-
-  {{> classSwitcher}}
-
-	{{> yield}}
+  {{#if currentUser}}
+    {{> header}}
+    {{> classSwitcher}}
+  	{{> yield}}
+  {{else}}
+    {{> login}}
+  {{/if}}
 </template>
