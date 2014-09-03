@@ -35,20 +35,60 @@
   }
 
   .action {
+    #loginForm {
+      width: 320px;
+      margin: 0 auto;
+    }
+
     .sep {
-      font-family: 'Georgia';
       font-style: italic;
       margin: 15px 0;
       opacity: .5;
+      color: #555;
 
       &:before, &:after {
         content: "";
         width: 50px;
-        border-bottom: 1px solid #888;
+        border-bottom: 1px solid #aaa;
         display: inline-block;
         vertical-align: middle;
         margin: 0 10px;
       }
+    }  
+  }
+}
+
+#signupModal {
+  .modal-dialog {
+    max-width: 400px;
+
+    .modal-content {
+      border-radius: 0;
     }
+  }
+
+  .modal-header {
+    .modal-title {
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  #signupForm {
+    .student-type-prompt {
+      margin-bottom: 15px;
+      font-size: 20px;
+      // font-weight: 300;
+      line-height: 24px;
+      text-align: center;
+      color: #999;
+    }
+
+    .cb-input-control-dualchoice {
+      margin-bottom: 0;
+    }
+
+    .cb-input-control, button#signupSubmit { display: none; }
   }
 }

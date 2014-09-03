@@ -1,13 +1,59 @@
 <template name="login">
+  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title">Registrarse en Classteroid</h4>
+        </div>
+        <div class="modal-body">
+          <form class="cb-form" id="signupForm">
+            <div class="student-type-prompt">Para comenzar, indícanos si eres un estudiante o profesor.</div>
+            <div class="cb-input-control-dualchoice">
+              <div class="choice">
+                <input type="radio" name="signupType" value="student" id="signupTypeStudent">
+                <label for="signupTypeStudent">
+                  <div class="icon"><i class="fa fa-graduation-cap"></i></div>
+                  <div>Estudiante</div>
+                </label>
+              </div>
+              <div class="choice">
+                <input type="radio" name="signupType" value="teacher" id="signupTypeTeacher">
+                <label for="signupTypeTeacher">
+                  <div class="icon"><i class="ioscon ioscon-glasses"></i></div>
+                  <div>Profesor</div>
+                </label>
+              </div>
+            </div>
+            <div class="cb-input-control">
+              <input type="text" class="input-text" name="signupName" placeholder="Nombre completo">
+            </div>
+            <button id="signupSubmit" type="submit" class="cb-btn cb-btn-green">Crear mi cuenta</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="login">
     <div class="brand">
       <i class="fa fa-graduation-cap"></i>
     </div>
     <div class="greeting">Organiza fácilmente tus clases con Classteroid.</div>
     <div class="action">
-      <button class="cb-btn cb-btn-large cb-btn-green login-button">Iniciar sesión</button>
+      <form class="cb-form" id="loginForm">
+        <div class="cb-input-control">
+          <i class="ioscon ioscon-mail"></i>
+          <input class="input-text" name="loginEmail" type="text" placeholder="Correo electrónico">
+        </div>
+        <div class="cb-input-control">
+          <i class="ioscon ioscon-key"></i>
+          <input class="input-text" name="loginPassword" type="password" placeholder="Contraseña">
+        </div>
+        <button type="submit" class="cb-btn cb-btn-green login-button">Iniciar sesión</button>
+      </form>
       <div class="sep">o bien</div>
-      <button class="cb-btn-o signup-button">Registrarme</button>
+      <button data-toggle="modal" data-target="#signupModal" class="cb-btn-o signup-button">Registrarme</button>
     </div>
   </div>
 </template>
