@@ -2,16 +2,15 @@
   <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h4 class="modal-title">Registrarse en Classteroid</h4>
-        </div>
         <div class="modal-body">
+          <button type="button" class="close-this" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h3>Registrarme</h3>
+          <div class="form-lead">Ya sea como profesor o estudiante, tu cuenta de Classteroid contendrá todas las actividades, tareas y documentos de las clases a las que atiendes.</div>
+          <div class="form-alert"><strong>¿Eres padre y/o tutor?</strong> Para crear tu cuenta, utiliza el enlace especial que será proporcionado por el Profesor. <a href="#">Más información...</a></div>
           <form class="cb-form" id="signupForm">
-            <div class="student-type-prompt">Para comenzar, indícanos si eres un estudiante o profesor.</div>
-            <div class="cb-input-control-dualchoice">
+            <div id="signupTypeChoice" class="cb-input-control-dualchoice">
               <div class="choice">
-                <input type="radio" name="signupType" value="student" id="signupTypeStudent">
+                <input checked type="radio" name="signupType" value="student" id="signupTypeStudent">
                 <label for="signupTypeStudent">
                   <div class="icon"><i class="fa fa-graduation-cap"></i></div>
                   <div>Estudiante</div>
@@ -25,10 +24,22 @@
                 </label>
               </div>
             </div>
-            <div class="cb-input-control">
+            <div class="cb-input-control large">
+              <i class="ioscon ioscon-user"></i>
               <input type="text" class="input-text" name="signupName" placeholder="Nombre completo">
             </div>
-            <button id="signupSubmit" type="submit" class="cb-btn cb-btn-green">Crear mi cuenta</button>
+            <div class="cb-input-control large">
+              <i class="ioscon ioscon-mail"></i>
+              <input type="text" class="input-text" name="signupEmail" placeholder="Correo electrónico">
+            </div>
+            <div class="cb-input-control large">
+              <i class="ioscon ioscon-key"></i>
+              <input type="password" class="input-text" name="signupEmail" placeholder="Contraseña">
+            </div>
+            <div class="cb-input-control large">
+              <input type="password" class="input-text" name="signupEmail" placeholder="Repetir contraseña">
+            </div>
+            <button id="signupSubmit" type="submit" class="cb-btn cb-btn-green cb-btn-large">Crear mi cuenta</button>
           </form>
         </div>
       </div>
@@ -42,15 +53,15 @@
     <div class="greeting">Organiza fácilmente tus clases con Classteroid.</div>
     <div class="action">
       <form class="cb-form" id="loginForm">
-        <div class="cb-input-control">
+        <div class="cb-input-control large">
           <i class="ioscon ioscon-mail"></i>
           <input class="input-text" name="loginEmail" type="text" placeholder="Correo electrónico">
         </div>
-        <div class="cb-input-control">
+        <div class="cb-input-control large">
           <i class="ioscon ioscon-key"></i>
           <input class="input-text" name="loginPassword" type="password" placeholder="Contraseña">
         </div>
-        <button type="submit" class="cb-btn cb-btn-green login-button">Iniciar sesión</button>
+        <button type="submit" class="cb-btn cb-btn-green cb-btn-large login-button">Iniciar sesión</button>
       </form>
       <div class="sep">o bien</div>
       <button data-toggle="modal" data-target="#signupModal" class="cb-btn-o signup-button">Registrarme</button>

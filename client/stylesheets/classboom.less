@@ -7,6 +7,29 @@ body, input, textarea {
   font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
+.modal {
+  .close-this {
+    position: absolute;
+    right: 25px;
+    top: 11px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-weight: 300;
+    opacity: 0.3;
+    padding: 0;
+    line-height: 20px;
+    height: 45px;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      opacity: .75;
+    }
+  }
+}
+
 .cb-btn {
   display: inline-block;
   background: #333;
@@ -100,22 +123,50 @@ body, input, textarea {
       font-size: 20px;
     }
 
-    .input-text {
+    input.input-text {
       width: 100%;
       background-color: white;
-      border: 1px solid #ccc;
+      border: 1px solid #ddd;
       height: 40px;
       border-radius: 3px;
       padding: 0 12px;
       outline: none;
-      transition: border .2s ease;
+      // color: #444;
+      // transition: border .2s ease;
 
       &:hover {
-        opacity: 1;
+        border-color: #bbb;
       }
 
       &:focus {
         border-color: #16A085;
+      }
+    }
+
+    &.large {
+      .ioscon {
+        height: 60px;
+        line-height: 60px;
+        font-size: 28px;
+        color: #999;
+        width: 60px;
+      }
+
+      input.input-text {
+        height: 60px;
+        font-size: 18px;
+        padding: 0 20px;
+        border-width: 2px;
+        letter-spacing: -0.5px;
+
+        &[type="password"] {
+          letter-spacing: 1px;
+        }
+
+        &::-webkit-input-placeholder {
+          font-weight: 300;
+          letter-spacing: -0.5px;
+        }
       }
     }
   }
@@ -147,11 +198,12 @@ body, input, textarea {
         font-weight: 400;
         cursor: pointer;
         padding: 20px 0;
+        margin-bottom: 0;
         background-color: whitesmoke;
 
         .icon {
           width: 50px;
-          height: 50px;
+          height: 42px;
           margin-bottom: 5px;
           margin: 0 auto;
           font-size: 30px;
