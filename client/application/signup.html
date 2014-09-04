@@ -1,4 +1,4 @@
-<template name="login">
+<template name="signup">
   <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -34,37 +34,15 @@
             </div>
             <div class="cb-input-control large">
               <i class="ioscon ioscon-key"></i>
-              <input type="password" class="input-text" name="signupEmail" placeholder="Contraseña">
+              <input type="password" class="input-text" name="signupPassword" placeholder="Contraseña">
             </div>
             <div class="cb-input-control large">
-              <input type="password" class="input-text" name="signupEmail" placeholder="Repetir contraseña">
+              <input type="password" class="input-text" name="signupPasswordConfirm" placeholder="Repetir contraseña">
             </div>
             <button id="signupSubmit" type="submit" class="cb-btn cb-btn-green cb-btn-large">Crear mi cuenta</button>
           </form>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div id="login">
-    <div class="brand">
-      <i class="fa fa-graduation-cap"></i>
-    </div>
-    <div class="greeting">Organiza fácilmente tus clases con Classteroid.</div>
-    <div class="action">
-      <form class="cb-form" id="loginForm">
-        <div class="cb-input-control large">
-          <i class="ioscon ioscon-mail"></i>
-          <input class="input-text" name="loginEmail" type="text" placeholder="Correo electrónico">
-        </div>
-        <div class="cb-input-control large">
-          <i class="ioscon ioscon-key"></i>
-          <input class="input-text" name="loginPassword" type="password" placeholder="Contraseña">
-        </div>
-        <button type="submit" class="cb-btn cb-btn-green cb-btn-large login-button">Iniciar sesión</button>
-      </form>
-      <div class="sep">o bien</div>
-      <button data-toggle="modal" data-target="#signupModal" class="cb-btn-o signup-button">Registrarme</button>
     </div>
   </div>
 </template>
