@@ -1,0 +1,25 @@
+<template name="login">
+  {{> signup}}
+
+  <div id="login">
+    <div class="brand">
+      <i class="fa fa-graduation-cap"></i>
+    </div>
+    <div class="greeting">Organiza fácilmente tus clases con Classteroid.</div>
+    <div class="action">
+      <form class="cb-form" id="loginForm">
+        <div class="cb-input-control large">
+          <i class="ioscon ioscon-mail"></i>
+          <input class="input-text" name="loginEmail" type="text" placeholder="Correo electrónico">
+        </div>
+        <div class="cb-input-control large">
+          <i class="ioscon ioscon-key"></i>
+          <input class="input-text" name="loginPassword" type="password" placeholder="Contraseña">
+        </div>
+        <button type="submit" class="cb-btn cb-btn-green cb-btn-large login-button">Iniciar sesión</button>
+      </form>
+      <div class="sep">o bien</div>
+      <button data-toggle="modal" data-target="#signupModal" class="cb-btn-o signup-button">Registrarme</button>
+    </div>
+  </div>
+</template>
