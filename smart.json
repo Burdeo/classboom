@@ -5,5 +5,8 @@
     "cfs-filesystem": {},
     "cfs-ui": {},
     "ui-dropped-event": {}
+  },
+  "bower": {
+    "pikaday": "1.2.0"
   }
 }

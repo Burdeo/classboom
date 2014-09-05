@@ -7,9 +7,12 @@ body, input, textarea {
   font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
+
 .modal {
   .modal-dialog {
-    max-width: 420px;
+    @media only screen and (min-width: 768px) {
+      max-width: 420px;
+    }
 
     .modal-content {
       border-radius: 0;
@@ -142,8 +145,11 @@ body, input, textarea {
     width: 100%;
     position: relative;
     margin-bottom: 10px;
+    font-size: 0;
 
-    .ioscon {
+    * { font-size: 14px; }
+
+    > .ioscon, .fa, .glyphicon {
       position: absolute;
       right: 0;
       top: 0;
@@ -175,7 +181,7 @@ body, input, textarea {
     }
 
     &.large {
-      .ioscon {
+      > .ioscon, .fa, .glyphicon {
         height: 60px;
         line-height: 60px;
         font-size: 28px;
@@ -198,6 +204,15 @@ body, input, textarea {
           font-weight: 300;
           letter-spacing: -0.5px;
         }
+      }
+    }
+
+    .cb-input-date {
+      display: inline-block;
+      width: ~"calc(50% - 5px)";
+
+      &:first-child {
+        margin-right: 10px;
       }
     }
   }

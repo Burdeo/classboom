@@ -19,4 +19,6 @@ cfs-filesystem
 cfs-ui
 ui-dropped-event
 matb33:collection-hooks
+underscore
+mquandalle:bower
 

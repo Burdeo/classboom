@@ -1,10 +1,18 @@
 <template name="layout">
   {{#if currentUser}}
+  
     {{> header}}
     {{> classSwitcher}}
-    {{> classPrompt}}
-  	{{> yield}}
+
+    {{#if _ "isEmpty" currentUser.profile.classes}}
+      {{> classPrompt}}
+    {{else}}
+      {{> yield}}
+    {{/if}}
+
   {{else}}
+
     {{> login}}
+
   {{/if}}
 </template>

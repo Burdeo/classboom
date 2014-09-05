@@ -1,12 +1,23 @@
 <template name="classPrompt">
-<div class="modal fade" id="classPromptModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body">
-          <h3 class="cb-modal-title">¡Bienvenido, {{firstWord currentUser.profile.name}}!</h3>
-          <div>Para comenzar, debes unirte a una clase.</div>
+  <div class="container">
+    <h3 class="cb-modal-title">¡Bienvenido, {{firstWord currentUser.profile.name}}!</h3>
+    {{#if _ "isEqual" currentUser.profile.userType "teacher"}}
+      <div>Para comenzar, debes crear tu primera clase.</div>
+      <br>
+      <form class="cb-form" id="createClass" style="width: 400px;">
+        <div class="cb-input-control">
+          <input type="text" class="input-text" name="classTitle" placeholder="Nombre de la asignatura">
         </div>
-      </div>
-    </div>
+        <div class="cb-input-control">
+          <div class="cb-input-date">
+            <input type="text" class="input-text" placeholder="Inicio de clases">
+          </div>
+          <div class="cb-input-date">
+            <input type="text" class="input-text" placeholder="Término de clases">
+          </div>
+        </div>
+        <button type="submit" class="cb-btn cb-btn-green">Crear clase</button>
+      </form>
+    {{/if}}
   </div>
 </template>
