@@ -13,7 +13,11 @@ Template.classSwitcher.helpers({
 
 Template.classSwitcher.events({
   'click #classSwitcher ul.classes-list li': function(e){
-    Session.set('currentClass', $(e.target).attr('data-class-id'));
+    var el = $(e.target);
+    if ( !el.is('#classSwitcher ul.classes-list li') ) {
+      el = $(e.target).parents('li');
+    }
+    Session.set('currentClass', el.attr('data-class-id'));
     $('#classSwitcher').modal('hide');
   }
 });

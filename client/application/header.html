@@ -4,7 +4,11 @@
       <ul class="nav navbar-nav navbar-right">
         {{#unless _ "isEmpty" currentUser.profile.classes}}
           <li id="class-picker">
-            <a href="#" data-toggle="modal" data-target="#classSwitcher"><span class="label label-danger">BGL-032</span> Biología <span class="caret"></span></a>
+            {{#if currentClass}}
+              <a href="#" data-toggle="modal" data-target="#classSwitcher"><span class="label label-info">{{currentClass.classCode}}</span> {{currentClass.title}} <span class="caret"></span></a>
+            {{else}}
+              <a href="#" data-toggle="modal" data-target="#classSwitcher">Todas mis clases <span class="caret"></span></a>
+            {{/if}}
           </li>
         {{/unless}}
         <li><a href="#" id="logout"><span class="glyphicon glyphicon-off"></span></a></li>
@@ -13,7 +17,7 @@
       {{#unless _ "isEmpty" currentUser.profile.classes}}
         <ul class="nav navbar-nav">
           <li><a href="#">Inicio</a></li>
-          <li class="active"><a href="#">Actividades</a></li>
+          <li class="active"><a href="{{pathFor 'calendar'}}">Calendario</a></li>
           <li><a href="#">Tareas</a></li>
         </ul>
       {{/unless}}
