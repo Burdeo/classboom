@@ -8,25 +8,15 @@
         </div>
         <div class="modal-body">
           <ul class="classes-list">
-            <li class="overview">
+            <li class="overview {{#if _ 'isEqual' currentClass 'all'}}active{{/if}}" data-class-id="all">
               <div class="title">Todas mis clases</div>
             </li>
-            <li>
-              <span class="label label-warning">CFI-201</span>
-              <div class="title">Lenguaje</div>
-            </li>
-            <li class="active">
-              <span class="label label-danger">BGL-032</span>
-              <div class="title">Biología</div>
-            </li>
-            <li>
-              <span class="label label-info">MTT-140</span>
-              <div class="title">Matemáticas</div>
-            </li>
-            <li>
-              <span class="label label-success">TXL-056</span>
-              <div class="title">Física</div>
-            </li>
+            {{#each myClasses}}
+              <li class="{{#if _ 'isEqual' currentClass _id}}active{{/if}}" data-class-id="{{_id}}">
+                <span class="label label-danger">{{classCode}}</span>
+                <div class="title">{{title}}</div>
+              </li>
+            {{/each}}
           </ul>
         </div>
       </div>

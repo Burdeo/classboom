@@ -10,14 +10,17 @@
         </div>
         <div class="cb-input-control">
           <div class="cb-input-date">
-            <input type="text" class="input-text" placeholder="Inicio de clases">
+            <input type="text" class="input-text" name="classStartDate" readonly placeholder="Inicio de clases">
           </div>
           <div class="cb-input-date">
-            <input type="text" class="input-text" placeholder="Término de clases">
+            <input type="text" class="input-text" name="classEndDate" readonly placeholder="Término de clases">
           </div>
         </div>
         <button type="submit" class="cb-btn cb-btn-green">Crear clase</button>
       </form>
+    {{/if}}
+    {{#if _ "isEqual" currentUser.profile.userType "student"}}
+      <div>Para comenzar, ingresa el código de clase entregado por tu Profesor. <a href="#">¿No tienes uno?</a></div><br>
     {{/if}}
   </div>
 </template>

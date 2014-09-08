@@ -209,7 +209,34 @@ body, input, textarea {
 
     .cb-input-date {
       display: inline-block;
+      position: relative;
       width: ~"calc(50% - 5px)";
+
+      input {
+        padding-left: 34px;
+        cursor: pointer;
+      }
+
+      &:before {
+        content: "\f073";
+        font-size: 14px;
+        position: absolute;
+        top: 10px;
+        left: 12px;
+        color: #AAA;
+        font-family: 'FontAwesome';
+      }
+
+      &:after {
+        content: "\f078";
+        font-size: 10px;
+        position: absolute;
+        right: 13px;
+        top: 13px;
+        color: #888;
+
+        font-family: 'FontAwesome';
+      }
 
       &:first-child {
         margin-right: 10px;
