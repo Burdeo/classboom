@@ -5,7 +5,11 @@
         {{#unless _ "isEmpty" currentUser.profile.classes}}
           <li id="class-picker">
             {{#if currentClass}}
-              <a href="#" data-toggle="modal" data-target="#classSwitcher"><span class="label label-info">{{currentClass.classCode}}</span> {{currentClass.title}} <span class="caret"></span></a>
+              <a href="#" data-toggle="modal" data-target="#classSwitcher">
+                {{currentClass.title}}
+                <span class="label label-info">{{currentClass.classCode}}</span>
+                <span class="caret"></span>
+              </a>
             {{else}}
               <a href="#" data-toggle="modal" data-target="#classSwitcher">Todas mis clases <span class="caret"></span></a>
             {{/if}}
