@@ -1,5 +1,20 @@
 <template name="timeline">
-  <div id="timeline">
-    {{> postCreator}}
+  <div class="container cb-container">
+    <div class="row">
+      <div id="timeline" class="col-sm-8">
+        {{> postCreator}}
+
+        <div class="class-posts">
+          {{#each posts}}
+            <div class="card post">
+              {{text}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="col-sm-4">
+        {{> timelineSidebar}}
+      </div>
+    </div>
   </div>
 </template>

@@ -11,6 +11,18 @@ UI.registerHelper('_', function() {
 UI.registerHelper('currentClass', function(){ return Session.get('currentClass'); });
 UI.registerHelper('currentPage', function(){ return Session.get('currentPage'); });
 
+// All my classes
+
+UI.registerHelper('myClasses', function(){
+  if ( Meteor.user() && Meteor.user().profile.classes.length > 0 ) {
+    var classes = Meteor.user().profile.classes;
+    classes.forEach(function(item, i){
+      var thisClass = Classes.findOne({_id: item});
+      classes[i] = thisClass;
+    });
+    return classes;
+  }
+});
 
 
 // Get a session variable from template

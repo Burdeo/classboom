@@ -1,0 +1,21 @@
+<template name="timelineSidebar">
+  <div id="timeline-sidebar">
+    <!-- Current class information -->
+    <div class="class-info card">
+      {{#if _ 'isEqual' currentClass 'all'}}
+        <h4>Mis clases</h4>
+        <ul class="classes-list">
+          {{#each myClasses}}
+            <li data-class-id="{{_id}}">
+              <span class="label label-info">{{classCode}}</span>
+              <span class="update-count">24</span>
+              <span>{{title}}</span>
+            </li>
+          {{/each}}
+        </ul>
+      {{else}}
+        
+      {{/if}}
+    </div>
+  </div>
+</template>
