@@ -20,9 +20,9 @@
       <a class="navbar-brand" href="#"><i class="fa fa-graduation-cap"></i></a>
       {{#unless _ "isEmpty" currentUser.profile.classes}}
         <ul class="nav navbar-nav">
-          <li><a href="{{pathFor 'timeline'}}">Inicio</a></li>
-          <li><a href="{{pathFor 'calendar'}}">Calendario</a></li>
-          <li><a href="#">Tareas</a></li>
+          <li class="{{#if _ "isEqual" currentPage "timeline"}}active{{/if}}"><a href="{{pathFor 'timeline'}}">Inicio</a></li>
+          <li class="{{#if _ "isEqual" currentPage "calendar"}}active{{/if}}"><a href="{{pathFor 'calendar'}}">Calendario</a></li>
+          <li class="{{#if _ "isEqual" currentPage "assignments"}}active{{/if}}"><a href="#">Tareas</a></li>
         </ul>
       {{/unless}}
     </div>

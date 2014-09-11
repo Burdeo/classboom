@@ -8,9 +8,10 @@ UI.registerHelper('_', function() {
   return _[fn].apply(self, arguments);
 });
 
-UI.registerHelper('currentClass', function(){
-  return Session.get('currentClass');
-})
+UI.registerHelper('currentClass', function(){ return Session.get('currentClass'); });
+UI.registerHelper('currentPage', function(){ return Session.get('currentPage'); });
+
+
 
 // Get a session variable from template
 UI.registerHelper('getSession', function(v){ return Session.get(v); });
