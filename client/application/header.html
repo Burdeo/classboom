@@ -3,19 +3,42 @@
     <div class="container">
       <ul class="nav navbar-nav navbar-right">
         {{#unless _ "isEmpty" currentUser.profile.classes}}
-          <li id="class-picker">
-            {{#if currentClass}}
-              <a href="#" data-toggle="modal" data-target="#classSwitcher">
-                {{currentClass.title}}
-                <span class="label label-info">{{currentClass.classCode}}</span>
-                <span class="caret"></span>
-              </a>
-            {{else}}
-              <a href="#" data-toggle="modal" data-target="#classSwitcher">Todas mis clases <span class="caret"></span></a>
-            {{/if}}
+          <li id="class-picker" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              {{#if _ 'isEqual' currentClass 'all'}}
+                <span>Todas mis clases</span>
+              {{else}}
+                {{#with getClass currentClass}}
+                  {{title}}
+                  <span class="label label-info">{{classCode}}</span>
+                {{/with}}
+              {{/if}}
+              <span class="caret"></span>
+            </a>
+            <ul id="classSwitcher" class="dropdown-menu" role="menu">
+              <li class="overview {{#if _ 'isEqual' currentClass 'all'}}active{{/if}}" data-class-id="all">
+                <a href="#">
+                  <div class="title">Todas mis clases</div>
+                </a>
+              </li>
+              {{#each myClasses}}
+                <li class="{{#if _ 'isEqual' currentClass _id}}active{{/if}}" data-class-id="{{_id}}">
+                  <a href="#">
+                    <span class="label label-info">{{classCode}}</span>
+                    <div class="title">{{title}}</div>
+                  </a>
+                </li>
+              {{/each}}
+            </ul>
           </li>
         {{/unless}}
-        <li><a href="#" id="logout"><span class="glyphicon glyphicon-off"></span></a></li>
+        <li class="user dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="http://graph.facebook.com/renemoraales/picture">
+            <span class="name">René A. Morales</span>
+            <span class="caret"></span>
+          </a>
+        </li>
       </ul>
       <a class="navbar-brand" href="#"><i class="fa fa-graduation-cap"></i></a>
       {{#unless _ "isEmpty" currentUser.profile.classes}}
