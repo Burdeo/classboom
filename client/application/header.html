@@ -1,9 +1,9 @@
 <template name="header">
-  <nav id="cb-header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav id="cb-header" class="navbar navbar-fixed-top" role="navigation">
     <div class="container">
       <ul class="nav navbar-nav navbar-right">
         {{#unless _ "isEmpty" currentUser.profile.classes}}
-          <li id="class-picker" class="dropdown">
+          <li id="class-picker" class="dropdown cb-dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               {{#if _ 'isEqual' currentClass 'all'}}
                 <span>Todas mis clases</span>
@@ -32,18 +32,29 @@
             </ul>
           </li>
         {{/unless}}
-        <li class="user dropdown">
+        <li class="user dropdown cb-dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="http://graph.facebook.com/renemoraales/picture">
+            {{#if currentUser.profile.avatar}}
+              <img src="{{currentUser.profile.avatar}}" class="avatar">
+            {{else}}
+              <img src="/avatar.png" class="avatar">
+            {{/if}}
+            {{#if _ 'isEqual' currentUser.profile.userType 'teacher'}}
+            <span class="teacher-label">Prof.</span>
+            {{/if}}
             <span class="name">René A. Morales</span>
             <span class="caret"></span>
           </a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Editar mi perfil</a></li>
+            <li><a id="logout" href="#"><span class="glyphicon glyphicon-off"></span> Cerrar sesión</a></li>
+          </ul>
         </li>
       </ul>
       <a class="navbar-brand" href="#"><i class="fa fa-graduation-cap"></i></a>
       {{#unless _ "isEmpty" currentUser.profile.classes}}
-        <ul class="nav navbar-nav">
-          <li class="{{#if _ "isEqual" currentPage "timeline"}}active{{/if}}"><a href="{{pathFor 'timeline'}}">Novedades</a></li>
+        <ul class="nav navbar-nav main-nav">
+          <li class="{{#if _ "isEqual" currentPage "timeline"}}active{{/if}}"><a href="{{pathFor 'timeline'}}">Apuntes</a></li>
           <li class="{{#if _ "isEqual" currentPage "calendar"}}active{{/if}}"><a href="{{pathFor 'calendar'}}">Calendario</a></li>
           <li class="{{#if _ "isEqual" currentPage "assignments"}}active{{/if}}"><a href="{{pathFor 'assignments'}}">Tareas</a></li>
         </ul>

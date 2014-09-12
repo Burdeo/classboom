@@ -24,9 +24,8 @@ UI.registerHelper('myClasses', function(){
 });
 
 // Get a class
-UI.registerHelper('getClass', function(classId){
-  return Classes.findOne({_id: classId});
-});
+UI.registerHelper('getClass', function(classId){ return Classes.findOne({_id: classId}); });
+UI.registerHelper('getUser', function(userId){ return Meteor.users.findOne({_id: userId}); });
 
 // Get a session variable from template
 UI.registerHelper('getSession', function(v){ return Session.get(v); });

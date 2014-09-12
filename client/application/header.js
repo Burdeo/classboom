@@ -1,5 +1,6 @@
 Template.header.events({
-  'click #logout': function(){
+  'click #logout': function(e){
+    e.preventDefault();
     Meteor.logout();
   },
   'click #classSwitcher li': function(e){

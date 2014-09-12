@@ -1,0 +1,51 @@
+<template name="timelinePost">
+  <div class="card timeline-post {{#with getUser userId}}{{#if _ 'isEqual' profile.userType 'teacher'}}is-teacher-post{{/if}}{{/with}}">
+    <div class="post-header">
+      <div class="author">
+        {{#with getUser userId}}
+          {{#if profile.avatar}}
+            <img src="{{profile.avatar}}" class="avatar">
+          {{else}}
+            <img src="/avatar.png" class="avatar">
+          {{/if}}
+        {{/with}}
+        <div class="info">
+          <div class="name">
+            {{#with getUser userId}}
+              {{#if _ 'isEqual' profile.userType 'teacher'}}<!-- <span class="teacher-label">Prof.</span> -->{{/if}}
+              <span>{{profile.name}}</span>
+            {{/with}}
+          </div>
+          <div class="class">
+            {{#with getClass classId}}
+              <div class="title">{{title}}</div>
+              <span class="label label-info">{{classCode}}</span>
+            {{/with}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="post-content">
+      <div class="text">{{text}}</div>
+    </div>
+    <div class="post-footer">
+      <div class="actions">
+        <div class="action action-like">
+          <span class="glyphicon glyphicon-thumbs-up"></span>
+          <span>22</span>
+        </div>
+        <div class="action action-comment">
+          <span class="glyphicon glyphicon-comment"></span>
+          <span>48</span>
+        </div>
+      </div>
+      <div class="time">
+        <span class="glyphicon glyphicon-time"></span>
+        <span>Hace 40 minutos</span>
+      </div>
+    </div>
+    <div class="post-comments">
+
+    </div>
+  </div>
+</template>

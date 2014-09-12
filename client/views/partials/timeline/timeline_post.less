@@ -1,0 +1,96 @@
+.card.timeline-post {
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 4px;
+
+  @media only screen and (min-width: 1200px) {
+    width: 373px;
+  }
+
+  .post-header {
+    margin-bottom: 10px;
+
+    .author {
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 2px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+
+      .info {
+        display: inline-block;
+        vertical-align: middle;
+
+        .name {
+          font-size: 16px;
+          font-weight: 600;
+
+          .teacher-label {
+            color: #FFA631;
+          }
+        }
+
+        .class {
+          position: relative;
+          top: -1px;
+
+          .label {
+            display: inline-block;
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            color: rgba(0, 0, 0, 0.5);
+            padding: 3px 0;
+            width: 60px;
+            position: relative;
+            top: -1px;
+            margin-left: 4px;
+          }
+          .title {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  .post-content {
+    font-size: 17px;
+    font-weight: 300;
+  }
+
+  .post-footer {
+    margin-top: 10px;
+
+    .time {
+      color: #aaa;
+
+      .glyphicon {
+        top: 2px;
+        margin-right: 3px;
+      }
+    }
+
+    .actions {
+      float: right;
+
+      .action {
+        display: inline-block;
+        font-size: 15px;
+        margin-left: 10px;
+
+        .glyphicon {
+          top: 3px;
+          margin-right: 2px;
+        }
+      }
+    }
+  }
+
+  &.is-teacher-post {
+    
+  }
+}

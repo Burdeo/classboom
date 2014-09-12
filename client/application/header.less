@@ -1,23 +1,12 @@
 #cb-header {
-  #class-picker {
-    &.open {
-      > a {
-        background-color: white;
-        box-shadow: 0px 0px 10px rgba(0,0,0,.1);
-      }
-    }
-    #classSwitcher {
-      border: none;
-      margin-top: 2px;
-      border-radius: 0;
-      min-width: 100%;
-      box-shadow: 0px 5px 10px rgba(0,0,0,.1);
+  border-top: 4px solid #08A87B;
+  padding: 20px 0;
 
+  #class-picker {
+    #classSwitcher {
       li {
         a {
-          padding: 6px 16px;
           padding-right: 85px;
-          position: relative;
 
           .label {
             position: absolute;
@@ -26,16 +15,24 @@
             margin-right: 0;
           }
         }
-
-        &.active {
-          a { background-color: #08A87B; }
-        }
       }
     }
   }
   
 
   .user {
+    font-weight: bold;
+
+    .teacher-label {
+      color: #FFA631;
+    }
+
+    .caret {
+      position: relative;
+      top: -1px;
+      margin-left: 5px;
+    }
+
     img {
       height: 26px;
       margin-top: -10px;
@@ -43,6 +40,111 @@
       position: relative;
       top: 3px;
       border-radius: 50%;
+    }
+  }
+
+  .navbar-brand {
+    color: #08A87B;
+    width: 56px;
+    height: 56px;
+    border: 2px solid #08A87B;
+    border-radius: 50%;
+    line-height: 58px;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    top: -3px;
+    margin-right: 10px;
+    margin-left: -2px;
+
+    .fa {
+      font-size: 22px;
+    }
+  }
+
+  ul.main-nav {
+    li {
+      a {
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      &:hover {
+        a {
+          background-color: transparent;
+          color: #999;
+        }
+      }
+
+      &.active {
+        a { 
+          color: #08A87B;
+          position: relative;
+
+          &:after {
+            content: "";
+            width: ~"calc(100% - 34px)";
+            height: 2px;
+            background-color: #08A87B;
+            display: block;
+            position: absolute;
+            bottom: 10px;
+            left: 17px;
+          }
+        }
+      }
+    }
+  }
+
+  ul.nav {
+    li a {
+      color: #555;
+    }
+
+    li.cb-dropdown {
+      &.open {
+        > a, > a:hover, > a:focus {
+          background-color: white;
+          box-shadow: 0px 0px 10px rgba(0,0,0,.1);
+        }
+      }
+
+      .dropdown-toggle {
+        &:hover {
+          background-color: #E7E7E7;
+        }
+      }
+
+      .dropdown-menu {
+        border: none;
+        margin-top: 2px;
+        border-radius: 0;
+        min-width: 100%;
+        box-shadow: 0px 5px 10px rgba(0,0,0,.1);
+
+        li {
+          a {
+            color: #555;
+            padding: 6px 16px;
+            position: relative;
+
+            .glyphicon {
+              font-size: 12px;
+              float: right;
+              position: relative;
+              top: 4px;
+            }
+          }
+
+          &.active {
+            a { 
+              color: white;
+              background-color: #08A87B;
+            }
+          }
+        }
+      }
     }
   }
 }
