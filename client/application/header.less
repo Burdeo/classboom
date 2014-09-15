@@ -1,14 +1,14 @@
 #cb-header {
-  border-top: 4px solid #08A87B;
+  // border-top: 4px solid #08A87B;
   padding: 20px 0;
 
   #class-picker {
     #classSwitcher {
-      li {
+      li.class-item {
         a {
-          padding-right: 85px;
+          padding-right: 90px;
 
-          .label {
+          .class-label {
             position: absolute;
             right: 12px;
             top: 7px;
@@ -54,7 +54,7 @@
     text-align: center;
     position: relative;
     top: -3px;
-    margin-right: 10px;
+    margin-right: 15px;
     margin-left: -2px;
 
     .fa {
@@ -65,9 +65,10 @@
   ul.main-nav {
     li {
       a {
-        font-size: 13px;
+        font-size: 14px;
         font-weight: bold;
         text-transform: uppercase;
+        font-family: 'Montserrat';
       }
 
       &:hover {
@@ -82,16 +83,16 @@
           color: #08A87B;
           position: relative;
 
-          &:after {
-            content: "";
-            width: ~"calc(100% - 34px)";
-            height: 2px;
-            background-color: #08A87B;
-            display: block;
-            position: absolute;
-            bottom: 10px;
-            left: 17px;
-          }
+          // &:after {
+          //   content: "";
+          //   width: ~"calc(100% - 34px)";
+          //   height: 2px;
+          //   background-color: #08A87B;
+          //   display: block;
+          //   position: absolute;
+          //   bottom: 10px;
+          //   left: 17px;
+          // }
         }
       }
     }
@@ -124,6 +125,15 @@
         box-shadow: 0px 5px 10px rgba(0,0,0,.1);
 
         li {
+          &.dropdown-section-header {
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 11px;
+            color: #aaa;
+            padding: 5px 15px;
+          }
+
           a {
             color: #555;
             padding: 6px 16px;

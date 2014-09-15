@@ -1,16 +1,18 @@
 <template name="postCreator">
-  {{#unless _ 'isEqual' currentClass 'all'}}
-    <form id="postCreator">
-      <textarea name="postText" placeholder="Comparte un apunte, enlace o archivo con el resto de la clase..."></textarea>
-      <div class="actions">
-        <a href="#" class="action">
-          <span class="glyphicon glyphicon-paperclip"></span>
-          <label>Adjuntar archivo</label>
-        </a>
-        <div class="pull-right">
+  <form id="postCreator">
+    <textarea name="postText" placeholder="Comparte un apunte, enlace o archivo con el resto de la clase..."></textarea>
+    <div class="actions">
+      <a href="#" class="action">
+        <span class="glyphicon glyphicon-paperclip"></span>
+        <label>Adjuntar archivo</label>
+      </a>
+      <div class="pull-right">
+        {{#unless _ 'isEqual' currentClass 'all'}}
           <button type="submit" class="cb-btn cb-btn-green">Publicar apunte</button>
-        </div>
+        {{else}}
+          <button title="Para publicar un apunte, primero elige una clase." type="submit" disabled class="has-tooltip cb-btn cb-btn-greyed">Publicar apunte</button>
+        {{/unless}}
       </div>
-    </form>
-  {{/unless}}
+    </div>
+  </form>
 </template>
