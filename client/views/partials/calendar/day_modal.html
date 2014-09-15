@@ -2,22 +2,47 @@
   <div class="modal fade" id="dayModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h4 class="modal-title">Cambiar de clase</h4>
-        </div>
         <div class="modal-body">
-          <ul class="classes-list">
-            <li class="overview {{#if _ 'isEqual' currentClass 'all'}}active{{/if}}" data-class-id="all">
-              <div class="title">Todas mis clases</div>
-            </li>
-            {{#each myClasses}}
-              <li class="{{#if _ 'isEqual' currentClass _id}}active{{/if}}" data-class-id="{{_id}}">
-                <span class="class-label class-label-{{classColor}}">{{classCode}}</span>
-                <div class="title">{{title}}</div>
-              </li>
-            {{/each}}
-          </ul>
+          <div class="day-header">
+            <a class="day-switcher" href="#" id="previous-day"><i class="fa fa-angle-left"></i></a>
+            <div class="current-day">
+              <div>{{#with currentDay}} <em>{{day}}</em> {{month}} <span class="year">{{year}}</span> {{/with}} <i class="fa fa-caret-down"></i></div>
+              <input type="text" id="currentDayPicker">
+            </div>
+            <a class="day-switcher" href="#" id="next-day"><i class="fa fa-angle-right"></i></a>
+          </div>
+          <div class="day-events">
+            {{#unless dayEvents}}
+              <div class="no-events">No hay nada programado para este día aún.</div>
+            {{/unless}}
+          </div>
+        </div>
+      </div>
+      <div class="modal-content add-event">
+        <div class="modal-body">
+          <form id="addEvent">
+            <div class="form-fields">
+              <div class="event-type">
+                <label for="eventType">Quiero agendar...</label>
+                <div id="eventTypePicker" class="btn-group">
+                  <button type="button" class="btn dropdown-toggle empty" data-toggle="dropdown">
+                    <div class="empty-option">una prueba, trabajo, disertación...</div>
+                    <div class="current-option"></div>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li data-event-type="test"><a href="#">una prueba</a></li>
+                    <li data-event-type="exam"><a href="#">un examen</a></li>
+                    <li data-event-type="presentation"><a href="#">una disertación</a></li>
+                    <li data-event-type="group"><a href="#">un trabajo grupal</a></li>
+                    <li data-event-type="in-class"><a href="#">un trabajo en clase</a></li>
+                  </ul>
+                </div>
+              </div>
+              <textarea placeholder="Escribe una pequeña descripción sobre la actividad que agregarás al calendario..." rows="3"></textarea>
+            </div>
+            <button type="submit" class="cb-btn cb-btn-green">Agendar actividad</button>
+          </form>
         </div>
       </div>
     </div>

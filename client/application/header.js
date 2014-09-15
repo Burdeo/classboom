@@ -3,7 +3,7 @@ Template.header.events({
     e.preventDefault();
     Meteor.logout();
   },
-  'click #classSwitcher li': function(e){
+  'click #classSwitcher li[data-class-id]': function(e){
     Session.set('currentClass', $(e.currentTarget).attr('data-class-id'));
     $('#classSwitcher').modal('hide');
   }

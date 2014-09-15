@@ -51,7 +51,11 @@ Template.calendar.helpers({
 
     var daysArray = [];
     for (var i = 0; i < dayCount; i++) {
-      daysArray.push({day: i+1});
+      var dayString = (i+1).toString();
+      if ( dayString.length == 1 ) { dayString = '0'+dayString; }
+      var monthString = month.toString();
+      if ( monthString.length == 1 ) { monthString = '0'+monthString; }
+      daysArray.push({day: i+1, fullDay: dayString+' '+monthString+' '+year});
     };
     
     return {
@@ -63,6 +67,10 @@ Template.calendar.helpers({
 });
 
 Template.calendar.events({
+  'click .days-container .day[data-day]': function(e){
+    Session.set('currentDay', $(e.currentTarget).attr('data-day'));
+    $('#dayModal').modal('show');
+  },
   'click #next-month': function(){
     var month = Session.get('calendarMonth');
     var year = Session.get('calendarYear');
