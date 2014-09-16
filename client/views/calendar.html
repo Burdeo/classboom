@@ -33,7 +33,22 @@
           <div class="day filler"></div>
         {{/each}}
         {{#each days}}
-          <div data-day="{{fullDay}}" class="day">{{day}}</div>
+          <div data-day="{{fullDay}}" class="day {{#if isToday}}today{{/if}}">
+            <div class="day-number">{{day}}</div>
+            <div class="day-events">
+              {{#each dayEvents}}
+                <div class="event">
+                  {{#with getClass classId}}
+                    <div class="class">
+                      <div class="class-label class-label-{{classColor}}">{{classCode}}</div>
+                      <div class="class-name class-label-alt-{{classColor}}">{{title}}</div>
+                    </div>
+                  {{/with}}
+                  <div class="title">{{title}}</div>
+                </div>
+              {{/each}}
+            </div>
+          </div>
         {{/each}}
         {{#each nextDays}}
           <div class="day filler">{{day}}</div>

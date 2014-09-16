@@ -18,6 +18,9 @@ Template.dayModal.destroyed = function(){
 }
 
 Template.dayModal.helpers({
+  dayEvents: function(){
+    return Events.find({dueDate: Session.get('currentDay')});
+  },
   sessionCurrentDay: function(){
     return Session.get('currentDay');
   },
@@ -35,7 +38,14 @@ Template.dayModal.helpers({
 Template.dayModal.events({
   'submit #addEvent': function(e){
     e.preventDefault();
-    $('#addEvent .form-fields').slideDown('fast');
+    var data = {};
+    data.title = $('#addEvent [name="eventTitle"]').val();
+    data.description = $('#addEvent [name="eventDescription"]').val();
+    data.classId = Session.get('currentClass');
+    data.eventType = $('#addEvent #eventTypePicker .current-option').attr('data-event-type');
+    data.dueDate = Session.get('currentDay');
+    
+    Events.insert(data);
   },
   'click #eventTypePicker .dropdown-menu li': function(e){
     var type = $(e.currentTarget).attr('data-event-type');

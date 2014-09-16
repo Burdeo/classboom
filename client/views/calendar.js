@@ -5,7 +5,10 @@ Template.calendar.rendered = function(){
 }
 
 Template.calendar.helpers({
-  'currentMonth': function(){
+  dayEvents: function(){
+    return Events.find({dueDate: this.fullDay});
+  },
+  currentMonth: function(){
     var month = Session.get('calendarMonth');
     var year = Session.get('calendarYear');
     var monthString = '01 '+month+' '+year;
@@ -21,10 +24,9 @@ Template.calendar.helpers({
       isCurrentMonth: isCurrentMonth
     };
 
-    console.log(response);
     return response;
   },
-  'month': function(){
+  month: function(){
     var month = Session.get('calendarMonth');
     var year = Session.get('calendarYear');
     var monthString = '01 '+month+' '+year;
@@ -53,9 +55,14 @@ Template.calendar.helpers({
     for (var i = 0; i < dayCount; i++) {
       var dayString = (i+1).toString();
       if ( dayString.length == 1 ) { dayString = '0'+dayString; }
+
       var monthString = month.toString();
       if ( monthString.length == 1 ) { monthString = '0'+monthString; }
-      daysArray.push({day: i+1, fullDay: dayString+' '+monthString+' '+year});
+
+      var isToday = false;
+      if ( dayString == moment().format('D') && month == moment().format('M') ) { isToday = true; }
+
+      daysArray.push({day: dayString, fullDay: dayString+' '+monthString+' '+year, isToday: isToday});
     };
     
     return {

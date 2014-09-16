@@ -12,9 +12,15 @@
             <a class="day-switcher" href="#" id="next-day"><i class="fa fa-angle-right"></i></a>
           </div>
           <div class="day-events">
-            {{#unless dayEvents}}
+            {{#if dayEvents}}
+              {{#each dayEvents}}
+                <div class="event">
+                  {{title}}
+                </div>
+              {{/each}}
+            {{else}}
               <div class="no-events">No hay nada programado para este día aún.</div>
-            {{/unless}}
+            {{/if}}
           </div>
         </div>
       </div>
@@ -24,7 +30,7 @@
             <div class="form-fields">
               <div class="event-type">
                 <label for="eventType">Quiero agendar...</label>
-                <div id="eventTypePicker" class="btn-group">
+                <div id="eventTypePicker" class="btn-group cb-dropdown-group">
                   <button type="button" class="btn dropdown-toggle empty" data-toggle="dropdown">
                     <div class="empty-option">una prueba, trabajo, disertación...</div>
                     <div class="current-option"></div>
@@ -39,9 +45,14 @@
                   </ul>
                 </div>
               </div>
-              <textarea placeholder="Escribe una pequeña descripción sobre la actividad que agregarás al calendario..." rows="3"></textarea>
+              <input name="eventTitle" type="text" placeholder="Dale un título simple y conciso a tu actividad.">
+              <textarea name="eventDescription" placeholder="Describe brevemente la actividad que se llevará a cabo y los contenidos relevantes para desarrollarla." rows="3"></textarea>
             </div>
-            <button type="submit" class="cb-btn cb-btn-green">Agendar actividad</button>
+            {{#unless _ 'isEqual' currentClass 'all'}}
+              <button type="submit" class="cb-btn cb-btn-green">Agendar actividad</button>
+            {{else}}
+              <button type="submit" disabled class="cb-btn cb-btn-greyed">Elige una clase...</button>
+            {{/unless}}
           </form>
         </div>
       </div>
