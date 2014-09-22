@@ -1,0 +1,22 @@
+<template name="sidebar">
+  <div id="sidebar">
+    <div id="sidebar-header">
+      <div id="logo">
+        <i class="fa fa-graduation-cap"></i>
+      </div>
+    </div>
+    <ul class="navigation class-switcher">
+      <li class="navigation-head">Mis clases</li>
+      <li data-class-id="all" class="class all-classes {{#if _ 'isEqual' currentClass 'all'}}active{{/if}}">
+        <div class="title">Todas mis clases</div>
+      </li>
+      {{#each myClasses}}
+        <li data-class-id="{{_id}}" class="class {{#if _ 'isEqual' currentClass _id}}active{{/if}}">
+          <div class="class-strip class-label-{{classColor}}"></div>
+          <div class="class-label class-label-{{classColor}}">{{classCode}}</div>
+          <div class="title">{{title}}</div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</template>

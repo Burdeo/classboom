@@ -26,5 +26,9 @@ Template.classPrompt.events({
     classes.push(classId);
 
     Meteor.users.update({_id: Meteor.userId()}, { $set: { 'profile.classes': classes } });
+
+    if ( Router.current().path != '/' ) {
+      Router.go('/');
+    }
   }
 });

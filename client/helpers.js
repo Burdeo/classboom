@@ -35,6 +35,18 @@ UI.registerHelper('firstWord', function(str){
   return str.split(' ')[0];
 });
 
+UI.registerHelper('firstWords', function(string, count){
+  var count = parseInt(count);
+  var words = string.split(' ');
+  var append = '';
+  if ( words.length > count ) {
+    append = '...';
+  }
+  var string = _.first(words, count).join(' ');
+  string = string + append;
+  return string;
+});
+
 // Return true if the user has no classes (eg. just signed up)
 UI.registerHelper('userHasNoClasses', function(){
   if ( Meteor.user() && Meteor.user().profile.classes.length === 0 ) { return true; }

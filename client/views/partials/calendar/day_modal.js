@@ -11,15 +11,39 @@ Template.dayModal.rendered = function(){
     $('#currentDayPicker').val(date.format('DD MM YYYY'));
     currentDayPicker.setMoment(date);
   });
+
+  $(document).on('keydown.dayModal', function(e){
+    console.log(e.which);
+    // if ( $(':focus').length == 0 ) {
+      if ( e.which == 37 ) {
+        $('#previous-day').click();
+      } else if ( e.which == 39 ) {
+        $('#next-day').click();
+      }
+    // }
+  })
 }
 
 Template.dayModal.destroyed = function(){
+  $(document).off('keydown.dayModal');
   currentDayInputCheck.stop();
 }
 
 Template.dayModal.helpers({
+  dayHasEvents: function(){
+    if ( Session.get('currentClass') == 'all' && Events.find({dueDate: Session.get('currentDay')}).count() > 0 ) {
+      return true;
+    } else if ( Session.get('currentClass') != 'all' && Events.find({dueDate: Session.get('currentDay'), classId: Session.get('currentClass')}).count() > 0 ) {
+      return true;
+    }
+    return false;
+  },
   dayEvents: function(){
-    return Events.find({dueDate: Session.get('currentDay')});
+    if ( Session.get('currentClass') == 'all' ) {
+      return Events.find({dueDate: Session.get('currentDay')});
+    } else {
+      return Events.find({dueDate: Session.get('currentDay'), classId: Session.get('currentClass')});
+    }
   },
   sessionCurrentDay: function(){
     return Session.get('currentDay');

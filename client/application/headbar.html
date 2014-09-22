@@ -1,0 +1,22 @@
+<template name="headbar">
+  <div id="headbar">
+    <div class="context">
+      {{#with getClass currentClass}}
+        <div class="class-label class-label-{{classColor}}">{{classCode}}</div>
+        <div class="class-info">
+          <h2>{{title}}</h2>
+          <h4 class="teacher">
+            <img src="http://graph.facebook.com/renemoraales/picture?type=large" class="avatar">
+            <span>Administrado por</span>
+            <span class="name">René A. Morales</span>
+          </h4>
+        </div>
+      {{/with}}
+    </div>
+    <div class="class-tabs">
+      <a class="{{#if _ "isEqual" currentPage "timeline"}}active{{/if}}" href="{{pathFor 'timeline'}}">Apuntes</a>
+      <a class="{{#if _ "isEqual" currentPage "calendar"}}active{{/if}}" href="{{pathFor 'calendar'}}">Calendario</a>
+      <a class="{{#if _ "isEqual" currentPage "assignments"}}active{{/if}}" href="{{pathFor 'assignments'}}">Tareas</a>
+    </div>
+  </div>
+</template>

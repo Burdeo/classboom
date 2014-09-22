@@ -1,7 +1,8 @@
 <template name="layout">
   {{#if currentUser}}
+    {{> sidebar}}
   
-    {{> header}}
+    {{> headbar}}
     {{> classSwitcher}}
 
     {{#if _ "isEmpty" currentUser.profile.classes}}

@@ -88,6 +88,43 @@
       font-weight: 300;
       font-style: italic;
     }
+
+    .event {
+      padding: 15px;
+      background-color: #eee;
+      border-radius: 3px;
+      margin-bottom: 15px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #ddd;
+      }
+
+      .class {
+        margin-top: -16px;
+
+        .class-label {
+          margin: 0;
+          border-radius: 0 0 2px 2px;
+        }
+
+        .class-name {
+          margin: 2px 0 5px;
+          font-weight: bold;
+          font-size: 12px;
+          font-family: 'Helvetica Neue', 'Arial', sans-serif;
+          text-transform: uppercase;
+        }
+      }
+
+      .title {
+        font-size: 18px;
+        margin-bottom: 2px;
+        color: #444;
+      }
+
+      &:last-child { margin-bottom: 0; }
+    }
   }
 
   .modal-content.add-event {

@@ -6,7 +6,11 @@ Template.calendar.rendered = function(){
 
 Template.calendar.helpers({
   dayEvents: function(){
-    return Events.find({dueDate: this.fullDay});
+    if ( Session.get('currentClass') == 'all' ) {
+      return Events.find({dueDate: this.fullDay});
+    } else {
+      return Events.find({dueDate: this.fullDay, classId: Session.get('currentClass')});
+    }
   },
   currentMonth: function(){
     var month = Session.get('calendarMonth');

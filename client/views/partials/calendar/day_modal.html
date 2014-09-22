@@ -12,10 +12,17 @@
             <a class="day-switcher" href="#" id="next-day"><i class="fa fa-angle-right"></i></a>
           </div>
           <div class="day-events">
-            {{#if dayEvents}}
+            {{#if dayHasEvents}}
               {{#each dayEvents}}
                 <div class="event">
-                  {{title}}
+                  {{#with getClass classId}}
+                    <div class="class">
+                      <div class="class-label class-label-{{classColor}}">{{classCode}}</div>
+                      <div class="class-name class-label-alt-{{classColor}}">{{title}}</div>
+                    </div>
+                  {{/with}}
+                  <div class="title">{{title}}</div>
+                  <div class="description">{{firstWords description '25'}}</div>
                 </div>
               {{/each}}
             {{else}}
