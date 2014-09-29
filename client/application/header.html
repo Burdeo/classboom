@@ -2,39 +2,6 @@
   <nav id="cb-header" class="navbar" role="navigation">
     <div class="container-fluid">
       <ul class="nav navbar-nav navbar-right">
-        {{#unless _ "isEmpty" currentUser.profile.classes}}
-          <!-- <li id="class-picker" class="dropdown cb-dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              {{#if _ 'isEqual' currentClass 'all'}}
-                <span>Todas mis clases</span>
-              {{else}}
-                {{#with getClass currentClass}}
-                  {{title}}
-                  <span class="class-label class-label-{{classColor}}">{{classCode}}</span>
-                {{/with}}
-              {{/if}}
-              <span class="caret"></span>
-            </a>
-            <ul id="classSwitcher" class="dropdown-menu" role="menu">
-              <li class="dropdown-section-header">Elige una clase</li>
-              <li class="overview {{#if _ 'isEqual' currentClass 'all'}}active{{/if}}" data-class-id="all">
-                <a href="#">
-                  <div class="title">Todas mis clases</div>
-                </a>
-              </li>
-              {{#each myClasses}}
-                <li class="{{#if _ 'isEqual' currentClass _id}}active{{/if}} class-item" data-class-id="{{_id}}">
-                  <a href="#">
-                    <span class="class-label class-label-{{classColor}}">{{classCode}}</span>
-                    <div class="title">{{title}}</div>
-                  </a>
-                </li>
-              {{/each}}
-              <li class="divider"></li>
-              <li><a href="{{pathFor 'classPrompt'}}"><span class="glyphicon glyphicon-plus"></span> Crear otra clase...</a></li>
-            </ul>
-          </li> -->
-        {{/unless}}
         <li class="user dropdown cb-dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             {{#if currentUser.profile.avatar}}

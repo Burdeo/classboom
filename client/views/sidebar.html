@@ -12,8 +12,7 @@
       </li>
       {{#each myClasses}}
         <li data-class-id="{{_id}}" class="class {{#if _ 'isEqual' currentClass _id}}active{{/if}}">
-          <div class="class-strip class-label-{{classColor}}"></div>
-          <div class="class-label class-label-{{classColor}}">{{classCode}}</div>
+          <div class="class-label">{{classCode}}</div>
           <div class="title">{{title}}</div>
         </li>
       {{/each}}

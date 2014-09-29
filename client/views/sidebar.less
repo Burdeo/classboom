@@ -44,18 +44,9 @@
     .class {
       cursor: pointer;
       padding: 11px 15px 11px 20px;
-      opacity: .75;
+      opacity: .66;
       position: relative;
-
-      &:after {
-        content: "";
-        width: ~"calc(100% + 11px)";
-        height: 1px;
-        background-color: rgba(255,255,255,.1);
-        position: absolute;
-        left: 20px;
-        bottom: 0px;
-      }
+      color: white;
 
       &.all-classes {
         font-style: italic;
@@ -72,34 +63,42 @@
         margin: 0;
         display: inline-block;
         vertical-align: middle;
-        width: 68px;
+        width: 60px;
         top: 0;
-        border: 2px solid rgba(255,255,255,.33);
+        padding: 5px 0;
+        font-size: 11px;
         -webkit-font-smoothing: antialiased;
         opacity: .75;
+        text-align: right;
+        color: inherit;
       }
 
       .title {
         font-size: 13px;
-        width: 165px;
+        width: 185px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         line-height: 23px;
-        color: rgba(255, 255, 255, 0.85);
       }
 
       &:hover {
-        background-color: rgba(0, 0, 0, 0.15);
+        background-color: rgba(255,255,255,.1);
       }
 
       &.active {
-        background-color: #1C1F26;
+        background-color: #040405;
         cursor: default;
         opacity: 1;
 
-        &:after {
-          display: none;
+        &:before {
+          content: "";
+          position: absolute;
+          width: 4px;
+          height: 100%;
+          left: 0;
+          top: 0;
+          background-color: #08A87B;
         }
 
         .class-strip {
